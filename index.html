@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Responsiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        /* Estilos Personalizados */
+
+        /* Efeito de Vidro (Glassmorphism) para o Cabeçalho e Botão Flutuante */
+        .glass-effect {
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            backdrop-filter: blur(2px); /* Efeito de Blur (Desfoque) */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* Animação e Hover para o Botão Flutuante */
+        .fixed-button-container {
+            /* Fixa na parte inferior, largura total (w-100) e padding horizontal zero (px-0) */
+            z-index: 1030; /* Garante que fique acima de outros elementos do Bootstrap */
+        }
+
+        .btn-flutuante {
+            transition: all 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .btn-flutuante:hover {
+            transform: scale(1.05); /* Pequena animação de zoom ao passar o mouse */
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Sombra mais intensa no hover */
+        }
+
+        /* Estilo da Imagem do Cabeçalho com Arredondamento */
+        .header-image {
+            width: 100%;
+            height: 300px; /* Altura fixa para melhor visual */
+            object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+            border-bottom-left-radius: 50px; /* Canto arredondado personalizado */
+            border-bottom-right-radius: 50px;
+            overflow: hidden; /* Garante que a imagem respeite o arredondamento */
+        }
+
+        /* Efeito de Hover/Animação nas Seções de Conteúdo */
+        .content-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px; /* Cantos arredondados nas seções */
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px); /* Pequena elevação ao passar o mouse */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Espaço para o botão fixo no rodapé */
+        body {
+            padding-bottom: 70px; /* Adiciona espaço na parte inferior para o botão fixo */
+        }
+
+        /* Estilo para as avaliações */
+        .avaliacao-card {
+            background-color: #f8f9fa; /* Fundo mais claro para destaque */
+            border-left: 5px solid #0d6efd; /* Linha de destaque */
+        }
+
+        /* Animação para o texto de destaque */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-text h1 {
+            animation: fadeInDown 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="mb-5 p-0 bg-dark">
+        <div class="header-image" style="background-image: url('bl1.png'); background-size: cover; background-position: center;">
+            <div class="d-flex align-items-center justify-content-center text-center h-100 glass-effect">
+                <div class="text-white p-4 header-text">
+                    <h1 class="display-4 fw-bold">Receba vídeos e mensagens diárias exclusivas</h1>
+                    <p class="lead">Fortaleça sua Fé e da sua Família. Com uma pequena doação que irá mudar a vida de pessoas necessitadas.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="positivos" class="mb-5">
+            <h2 class="text-center mb-4 text-primary">⭐ Benefícios</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-3 text-center h-100 content-card">
+                        <i class="bi bi-speedometer2 fs-1 text-success"></i>
+                        <h4 class="mt-3">Corrente de Oração</h4>
+                        <p>Você e sua família entrarão em nossa corrente de oração diária</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 text-center h-100 content-card">
+                        <i class="bi bi-shield-lock fs-1 text-info"></i>
+                        <h4 class="mt-3">Doação Mensal</h4>
+                        <p>Sua pequena doação mensal irá ajudar diversas pessoas em situação de extrema necessidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 text-center h-100 content-card">
+                        <i class="bi bi-hand-thumbs-up fs-1 text-warning"></i>
+                        <h4 class="mt-3">Mensagens e Vídeos exclusivos</h4>
+                        <p>Vídeos e Mensagens diárias apenas para Assinantes, que também terá prioridade em meus eventos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <section id="avaliacoes" class="mb-5">
+            <h2 class="text-center mb-4 text-secondary">💬 Relatos de Fé</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 content-card avaliacao-card">
+                        <p class="fst-italic">"Simplesmente transformador! Agora não preciso abrir o Canal todo dia, eu recebo as mensagens direto no meu Whatsapp e assisto com meus filhos. Obrigado Bispo."</p>
+                        <div class="mt-3">
+                            <span class="text-warning">★★★★★</span>
+                            <p class="mb-0 fw-bold">Ana Paula Azevedo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 content-card avaliacao-card">
+                        <p class="fst-italic">"Eu assinei para retribuir um pouco de todas as vezes que o Bispo alegrou o meu dia com seus vídeos e mensagens de fé."</p>
+                        <div class="mt-3">
+                            <span class="text-warning">★★★★★</span>
+                            <p class="mb-0 fw-bold">Gabriel Pereira Silva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height: 00px;"></div>
+
+    </main>
+
+    <div class="fixed-bottom p-3 px-0 fixed-button-container glass-effect">
+        <a href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=11b155a189034dff9526832461501a22" class="btn btn-primary btn-lg w-100 btn-flutuante rounded-pill mx-auto d-block" style="max-width: 90%;" role="button">
+            Assinar agora <br/> <small>Sua doação é muito importante</small>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
